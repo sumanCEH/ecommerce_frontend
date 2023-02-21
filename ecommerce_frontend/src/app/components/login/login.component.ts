@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RestapiService } from 'src/app/restapi.service';
 
 @Component({
   selector: 'app-login',
@@ -7,12 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit{
 
-  loginData: any = {
-    email:"",
-    password:"",
+ 
+  logincred: any  ={
+    email:" ",
+    password:" "
   }
 
-  constructor(){
+  constructor(private service:RestapiService,private router:Router){
   }
 
   ngOnInit(): void {
@@ -23,10 +26,20 @@ register(){
   console.log("rigister works");
 };
 
-onLogin(){
-  console.log("submit");
-  console.log(this.loginData)
-}
+// onLogin(){
+//   console.log("submit");
+//   console.log(this.loginData)
+// }
+
+doLogin(){
+  console.log(this.logincred)
+ let response = this.service.login(this.logincred);
+ response.subscribe(data=> {
+  console.log(data)
+  this.logincred.message;
+  this.router.navigate(["/home"])
+})
+};
 
 
 }

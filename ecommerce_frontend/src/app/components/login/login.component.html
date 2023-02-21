@@ -20,17 +20,17 @@
             <form >
               <div class="mb-4">
                 <label for="username" class="form-label">Email</label>
-                <input type="text" class="form-control" id="username" [(ngModel)] = "loginData.email" [ngModelOptions] = "{standalone:true}" />
+                <input type="text" class="form-control" id="username" [(ngModel)] = "logincred.email" [ngModelOptions] = "{standalone:true}" />
               </div>
               <div class="mb-4">
                 <label for="password" class="form-label"> Password</label>
-                <input type="password" class="form-control" id="password"  [(ngModel)] = "loginData.password" [ngModelOptions] = "{standalone:true}"/>
+                <input type="password" class="form-control" id="password"  [(ngModel)] = "logincred.password" [ngModelOptions] = "{standalone:true}"/>
               </div>
               <div class="mb-4">
                 <a (click)="register()" href="register" Routerlink = "/register" >Create an account?</a>
               </div>
               <div class="d-grid">
-                <button type="submit" (click)="onLogin()" class="btnbtn">Login</button>
+                <button type="submit" (click)="doLogin()" class="btnbtn">Login</button>
               </div>
             </form>
           </div>

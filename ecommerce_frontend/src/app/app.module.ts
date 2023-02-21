@@ -16,6 +16,8 @@ import {MatIconModule} from '@angular/material/icon';
 import { RegisterComponent } from './components/register/register.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RestapiService } from './restapi.service';
 
 
 
@@ -40,9 +42,10 @@ import { FormsModule } from '@angular/forms';
     MatListModule,
     MatIconModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [RestapiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

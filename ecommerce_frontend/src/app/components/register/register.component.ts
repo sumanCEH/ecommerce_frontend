@@ -7,4 +7,24 @@ import { Component } from '@angular/core';
 })
 export class RegisterComponent {
 
+  registerData: any = {
+    email:"",
+    password:"",
+    fristname:"",
+    lastname:""
+  }
+
+  constructor(){
+  }
+
+  ngOnInit(): void {
+    
+  }
+
+
+onLogin(){
+  console.log("submit");
+  console.log(this.registerData)
+}
+
 }
